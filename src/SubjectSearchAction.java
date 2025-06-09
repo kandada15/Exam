@@ -15,14 +15,14 @@ public class SubjectSearchAction extends Action {
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
 		try{
-			String schoolName = request.getParameter("schoolname");
-			String classNumber = request.getParameter("classnumber");
+			String SchoolId = request.getParameter("schoolid");
+			String ClassNumber = request.getParameter("classnumber");
 			SubjectListDAO dao = new SubjectListDAO();
-			List<SubjectListBean> list = dao.search(schoolName, classNumber);
+			List<SubjectListBean> list = dao.search(SchoolId, ClassNumber);
 
 			request.setAttribute("subjectlist", list);
-			request.setAttribute("schoolname", schoolName);
-			request.setAttribute("classnumber", classNumber);
+			request.setAttribute("schoolid", SchoolId);
+			request.setAttribute("classnumber", ClassNumber);
 
 			return "Subject/subjectsearch.jsp";
 

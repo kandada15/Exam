@@ -3,6 +3,9 @@ package bean;
 import java.io.Serializable;
 
 public class SubjectListBean implements Serializable {
+
+	 private String classid;
+	 private String subjectid;
 	 private String subjectcode;
 	 private String subjectname;
 	 private String schoolname;
@@ -35,5 +38,17 @@ public class SubjectListBean implements Serializable {
 	}
 	public void setClassNumber(String classnumber) {
 		this. classnumber= classnumber;
+	}
+	public String getClassId() {
+		return classid;
+	}
+	public void setClassId(String classid) {
+		this.classid = classid;
+	}
+	public String getSubjectId() {
+		return subjectid;
+	}
+	public void setSubjectId(String subjectid) {
+		this.subjectid = subjectid;
 	}
 }

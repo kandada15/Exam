@@ -15,12 +15,13 @@ public void insert(SubjectListBean bl) throws Exception {
 
         try (Connection con = getConnection();
             PreparedStatement st = con.prepareStatement(
-                "INSERT INTO subjectlist (subjectcode, subjectname, schoolname, classnumber) VALUES (?, ?, ?, ?)")) {
-
-        	    st.setString(1, bl.getSubjectCode());
-        	    st.setString(2, bl.getSubjectName());
-        	    st.setString(3, bl.getSchoolName());
-                st.setString(4, bl.getClassNumber());
+                "INSERT INTO subjectlist (classid, subjectid, subjectcode, subjectname, schoolname, classnumber) VALUES (? ,? ,?, ?, ?, ?)")) {
+        	    st.setString(1, bl.getClassId());
+        	    st.setString(2, bl.getSubjectId());
+        	    st.setString(3, bl.getSubjectCode());
+        	    st.setString(4, bl.getSubjectName());
+        	    st.setString(5, bl.getSchoolName());
+                st.setString(6, bl.getClassNumber());
 
 
                 st.executeUpdate();
@@ -48,20 +49,22 @@ public int deleteByName(String subjectname) throws Exception {
 }
 //
 // 検索機能(select)
-public List<SubjectListBean> search(String schoolName, String classNumber) throws Exception {
+public List<SubjectListBean> search(String SchoolId, String ClassNumber) throws Exception {
     List<SubjectListBean> list = new ArrayList<>();
 
     try (Connection con = getConnection();
          PreparedStatement st = con.prepareStatement(
-             "SELECT * FROM studentlist WHERE schoolname = ? AND classnumber = ?")) {
+             "SELECT * FROM studentlist WHERE schoolid = ? AND classnumber = ?")) {
 
 //        String likeKeyword = "%" + keyword + "%";
-        st.setString(1, schoolName);
-        st.setString(2, classNumber);
+        st.setString(1, SchoolId);
+        st.setString(2, ClassNumber);
 
         ResultSet rs = st.executeQuery();
         while (rs.next()) {
         	SubjectListBean bl = new SubjectListBean();
+        	bl.setClassId(rs.getString("classid"));
+        	bl.setSubjectId(rs.getString("subjectid"));
         	bl.setSubjectCode(rs.getString("subjectcode"));
         	bl.setSubjectName(rs.getString("subjectname"));
         	bl.setSchoolName(rs.getString("schoolname"));

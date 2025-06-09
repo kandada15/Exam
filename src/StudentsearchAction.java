@@ -11,14 +11,14 @@ public class StudentsearchAction extends Action {
     public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
         try {
-        	String schoolName = request.getParameter("schoolname");
-        	String classNumber = request.getParameter("classnumber");
+        	String SchoolId = request.getParameter("schoolid");
+        	String ClassNumber = request.getParameter("classnumber");
             StudentListDAO dao = new StudentListDAO();
-            List<StudentListBean> list = dao.search(schoolName, classNumber);  // 後述の search() を使用
+            List<StudentListBean> list = dao.search(SchoolId, ClassNumber);  // 後述の search() を使用
 
             request.setAttribute("list", list);
-            request.setAttribute("schoolname", schoolName);
-            request.setAttribute("classnumber", classNumber);
+            request.setAttribute("schoolid", SchoolId);
+            request.setAttribute("classnumber", ClassNumber);
 
             return "search.jsp";
 

@@ -14,9 +14,10 @@ public void insert(StudentListBean bl) throws Exception {
 
         try (Connection con = getConnection();
             PreparedStatement st = con.prepareStatement(
-                "INSERT INTO studentlist (schoolname, studentnumber, classnumber, studentname) VALUES (?, ?, ?, ?)")) {
+                "INSERT INTO studentlist (schoolid, studentnumber, studentname, classnumber) VALUES (?, ?, ?, ?)")) {
 
-        	    st.setString(1, bl.getSchoolName());
+//        	    st.setString(1, bl.getSchoolName());
+        	    st.setString(1, bl.getSchoolId());
                 st.setString(2, bl.getStudentNumber());
                 st.setString(3, bl.getClassNumber());
                 st.setString(4, bl.getStudentName());
@@ -47,21 +48,22 @@ public int deleteByName(String studentname) throws Exception {
 }
 //
 // 検索機能(select)
-public List<StudentListBean> search(String schoolName, String classNumber) throws Exception {
+public List<StudentListBean> search(String SchoolId, String ClassNumber) throws Exception {
     List<StudentListBean> list = new ArrayList<>();
 
     try (Connection con = getConnection();
          PreparedStatement st = con.prepareStatement(
-             "SELECT * FROM studentlist WHERE schoolname = ? AND classnumber = ?")) {
+             "SELECT * FROM studentlist WHERE schoolid = ? AND classnumber = ?")) {
 
 //        String likeKeyword = "%" + keyword + "%";
-        st.setString(1, schoolName);
-        st.setString(2, classNumber);
+        st.setString(1, SchoolId);
+        st.setString(2, ClassNumber);
 
         ResultSet rs = st.executeQuery();
         while (rs.next()) {
         	StudentListBean bl = new StudentListBean();
-        	bl.setSchoolName(rs.getString("schoolname"));
+//        	bl.setSchoolName(rs.getString("schoolname"));
+        	bl.setSchoolId(rs.getString("schoolid"));
             bl.setStudentNumber(rs.getString("studentnumber"));
             bl.setClassNumber(rs.getString("classnumber"));
             bl.setStudentName(rs.getString("studentname"));

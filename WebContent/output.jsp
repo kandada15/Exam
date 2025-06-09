@@ -11,8 +11,8 @@
 
     <%
       StudentListBean bl = (StudentListBean) request.getAttribute("bl");
-    %>
-        <p> 学校名：<%= bl.getSchoolName() %></p>
+    %>  
+        <p> 学校ID : <%= bl.getSchoolId() %> </p> 
         <p> 学生番号：<%= bl.getStudentNumber() %></p>
         <p> クラス：<%= bl.getClassNumber() %></p>
         <p> 学生名：<%= bl.getStudentName() %></p>
