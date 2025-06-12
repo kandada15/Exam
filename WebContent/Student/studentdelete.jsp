@@ -10,7 +10,7 @@
 
     <p>学生名を入力してください。</p>
 
-    <form action="Studentdelete.action" method="post">
+    <form action="../Studentdelete.action" method="post">
         学生名：<input type="text" name="name" required><br><br>
         <input type="submit" value="削除">
     </form>
@@ -28,6 +28,6 @@
     %>
 
     <br>
-    <input type="button" value="総管理画面へ" onclick="location.href='menu.jsp'">
+    <input type="button" value="総管理画面へ" onclick="location.href='../menu.jsp'">
 </body>
 </html>

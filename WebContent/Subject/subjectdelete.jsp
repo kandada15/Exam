@@ -28,6 +28,6 @@
     %>
 
     <br>
-    <input type="button" value="総管理画面へ" onclick="location.href='menu.jsp'">
+    <input type="button" value="総管理画面へ" onclick="location.href='../menu.jsp'">
 </body>
 </html>

@@ -9,7 +9,7 @@
     <h2>学生情報検索</h2>
     <p>学校名とクラス名を選択すると、学生番号と学生名を表示出来るはず</p>
 
-    <form action="Studentsearch.action" method="post">
+    <form action="../Studentsearch.action" method="post">
         学校ID：
         <select name="schoolid">
          <option value="1">広島校</option>
@@ -32,7 +32,7 @@
         String classNumber = (String) request.getAttribute("classnumber");
         if (list != null) {
     %>
-        <h3><%= schoolid %> - <%= classNumber %>」の検索結果：</h3>
+        <h3><%= schoolid %> - <%= classNumber %>の検索結果：</h3>
         <ul>
         <% for (StudentListBean student : list) { %>
             <li>

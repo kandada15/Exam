@@ -7,9 +7,9 @@
 </head>
 <body>
   <ul>
-   <li><a href="search.jsp">成績一覧表示</a></li>
-   <li><a href="delete.jsp">成績登録</a></li>
-   <li><a href=".html">成績削除</a></li>
+   <li><a href="gradesearch.jsp">成績一覧表示</a></li>
+   <li><a href="gradeinput.html">成績登録</a></li>
+   <li><a href="gradedelete.jsp">成績削除</a></li>
    <li><a href="menu.jsp">総管理画面へ</a></li>
   </ul>
 </body>
