@@ -18,9 +18,9 @@
   <h3><%= loginUser %></h3>
   <h2>学生管理画面</h2>
     <ul>
-        <li><a href="Student/studentsearch.jsp">学生一覧表示</a></li>
-        <li><a href="Student/studentinput.html">学生登録</a></li>
-        <li><a href="Student/studentdelete.jsp">学生削除</a></li>
+        <li><a href="studentsearch.jsp">学生一覧表示</a></li>
+        <li><a href="studentinput.html">学生登録</a></li>
+        <li><a href="studentdelete.jsp">学生削除</a></li>
         <li><a href="menu.jsp">総管理画面へ</a></li>
     </ul>
 </body>

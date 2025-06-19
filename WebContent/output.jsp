@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%@ page import="bean.StudentListBean" %>
+
 <!DOCTYPE html>
 <html>
 <head>

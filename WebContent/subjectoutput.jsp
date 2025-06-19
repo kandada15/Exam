@@ -12,8 +12,8 @@
     <%
       SubjectListBean bl = (SubjectListBean) request.getAttribute("bl");
     %>
-        <p> 学校名：<%= bl.getSchoolName() %></p>
-        <p> クラス：<%= bl.getClassNumber() %></p>
+        <p> 学校：<%= bl.getSchoolId() %></p>
+        <p> クラス：<%= bl.getClassId() %></p>
         <p> 科目番号：<%= bl.getSubjectCode() %></p>
         <p> 科目名：<%= bl.getSubjectName() %></p>
 

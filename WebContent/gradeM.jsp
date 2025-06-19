@@ -1,4 +1,13 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" import="java.util.List" %><!--必要に応じてbean.bean名-->
+
+<%
+    String loginUser = (String) session.getAttribute("loginUser");
+    if (loginUser == null) {
+        response.sendRedirect("login.jsp");
+        return;
+    }
+%>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -6,6 +15,8 @@
 <title>成績管理画面</title>
 </head>
 <body>
+  <h3><%= loginUser %></h3>
+  <h2>成績管理画面</h2>
   <ul>
    <li><a href="gradesearch.jsp">成績一覧表示</a></li>
    <li><a href="gradeinput.html">成績登録</a></li>

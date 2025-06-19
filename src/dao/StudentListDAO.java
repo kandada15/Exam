@@ -14,7 +14,7 @@ public void insert(StudentListBean bl) throws Exception {
 
         try (Connection con = getConnection();
             PreparedStatement st = con.prepareStatement(
-                "INSERT INTO studentlist (schoolid, studentnumber, studentname, classnumber) VALUES (?, ?, ?, ?)")) {
+                "INSERT INTO studentlist (schoolid, studentnumber, classnumber, studentname) VALUES (?, ?, ?, ?)")) {
 
 //        	    st.setString(1, bl.getSchoolName());
         	    st.setString(1, bl.getSchoolId());

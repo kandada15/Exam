@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>成績登録するやつ</title>
+</head>
+
+<body>
+	<h2>学生/成績情報の登録</h2>
+	<form action="GradeBeanSystem.action" method="POST">
+		学校名：<br>
+		<select name="schoolid">
+         <option value="1">広島校</option>
+         <option value="2">東京校</option>
+         <option value="3">難波校</option>
+        </select><br><br>
+		クラス：<br>
+		<select name="classnumber">
+         <option value="1-31">1-31</option>
+         <option value="2-31">2-31</option>
+        </select><br><br>
+		学生名：<br>
+		<input type="text" name="studentname" required><br><br>
+		科目名：<br>
+		<select name="subjectname" required>
+         <option value="井口">井口</option>
+         <option value="ひろあき">ひろあき</option>
+        </select><br><br>
+		点数：<br>
+		<input type="number"  name="score" min="0" max="100" value="1" required><br><br>
+
+		<input type="submit" value="送信"><br><br>
+
+    <input type="button" value="総管理画面へ" onclick="location.href='menu.jsp'">
+	</form>
+</body>
+
+</html>

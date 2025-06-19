@@ -17,7 +17,7 @@ public class StudentdeleteAction extends Action {
             request.setAttribute("deletedCount", deletedCount);
             request.setAttribute("deletedName", studentname);
 
-            return "Student/studentdelete.jsp";
+            return "studentdelete.jsp";
 
         } catch (Exception e) {
             e.printStackTrace();

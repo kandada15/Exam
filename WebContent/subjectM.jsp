@@ -18,9 +18,9 @@
   <h3><%= loginUser %></h3>
   <h2>科目管理画面</h2>
   <ul>
-   <li><a href="Subject/subjectsearch.jsp">科目一覧表示</a></li>
-   <li><a href="Subject/subjectinput.html">科目登録</a></li>
-   <li><a href="Subject/subjectdelete.jsp">科目削除</a></li>
+   <li><a href="subjectsearch.jsp">科目一覧表示</a></li>
+   <li><a href="subjectinput.html">科目登録</a></li>
+   <li><a href="subjectdelete.jsp">科目削除</a></li>
    <li><a href="menu.jsp">総管理画面へ</a></li>
   </ul>
 </body>

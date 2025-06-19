@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>科目登録するやつ</title>
+</head>
+
+<body>
+	<h2>科目情報の登録</h2>
+	<form action="SubjectBeanSystem.action" method="POST">
+		学校：<br>
+		<select name="schoolid" required>
+         <option value="1">広島校</option>
+         <option value="2">東京校</option>
+         <option value="3">難波校</option>
+        </select><br><br>
+		クラス：<br>
+		<select name="classid" required>
+         <option value="1">1-31</option>
+         <option value="2">2-31</option>
+        </select><br><br>
+		科目番号：<br>
+        <input type="number"  name="subjectcode" min="1" max="10" value="1" required><br><br>
+		科目名：<br>
+		<select name="subjectname" required>
+         <option value="井口">井口</option>
+         <option value="ひろあき">ひろあき</option>
+        </select><br><br>
+
+
+		<input type="submit" value="送信"><br><br>
+
+    <input type="button" value="総管理画面へ" onclick="location.href='menu.jsp'">
+	</form>
+</body>
+
+</html>

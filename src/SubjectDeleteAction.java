@@ -17,7 +17,7 @@ public class SubjectDeleteAction extends Action {
             request.setAttribute("deletedCount", deletedCount);
             request.setAttribute("deletedName", subjectname);
 
-            return "delete.jsp";
+            return "subjectdelete.jsp";
 
         } catch (Exception e) {
             e.printStackTrace();

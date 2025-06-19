@@ -20,7 +20,7 @@ public class StudentsearchAction extends Action {
             request.setAttribute("schoolid", SchoolId);
             request.setAttribute("classnumber", ClassNumber);
 
-            return "Student/studentsearch.jsp";
+            return "studentsearch.jsp";
 
         } catch (Exception e) {
             e.printStackTrace();

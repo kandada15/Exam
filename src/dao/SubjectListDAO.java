@@ -15,13 +15,12 @@ public void insert(SubjectListBean bl) throws Exception {
 
         try (Connection con = getConnection();
             PreparedStatement st = con.prepareStatement(
-                "INSERT INTO subjectlist (classid, subjectid, subjectcode, subjectname, schoolname, classnumber) VALUES (? ,? ,?, ?, ?, ?)")) {
-        	    st.setString(1, bl.getClassId());
-        	    st.setString(2, bl.getSubjectId());
+                "INSERT INTO subjectlist (schoolid, classid, subjectcode, subjectname) VALUES (? ,? ,?, ?)")) {
+        	    st.setString(1, bl.getSchoolId());
+        	    st.setString(2, bl.getClassId());
+//        	    st.setString(3, bl.getSubjectId());
         	    st.setString(3, bl.getSubjectCode());
         	    st.setString(4, bl.getSubjectName());
-        	    st.setString(5, bl.getSchoolName());
-                st.setString(6, bl.getClassNumber());
 
 
                 st.executeUpdate();
@@ -49,26 +48,25 @@ public int deleteByName(String subjectname) throws Exception {
 }
 //
 // 検索機能(select)
-public List<SubjectListBean> search(String SchoolId, String ClassNumber) throws Exception {
+public List<SubjectListBean> search(String SchoolId, String ClassId) throws Exception {
     List<SubjectListBean> list = new ArrayList<>();
 
     try (Connection con = getConnection();
          PreparedStatement st = con.prepareStatement(
-             "SELECT * FROM studentlist WHERE schoolid = ? AND classnumber = ?")) {
+             "SELECT * FROM subjectlist WHERE schoolid = ? AND classid = ?")) {
 
 //        String likeKeyword = "%" + keyword + "%";
         st.setString(1, SchoolId);
-        st.setString(2, ClassNumber);
+        st.setString(2, ClassId);
 
         ResultSet rs = st.executeQuery();
         while (rs.next()) {
         	SubjectListBean bl = new SubjectListBean();
+        	bl.setSchoolId(rs.getString("schoolid"));
         	bl.setClassId(rs.getString("classid"));
-        	bl.setSubjectId(rs.getString("subjectid"));
+//        	bl.setSubjectId(rs.getString("subjectid"));
         	bl.setSubjectCode(rs.getString("subjectcode"));
         	bl.setSubjectName(rs.getString("subjectname"));
-        	bl.setSchoolName(rs.getString("schoolname"));
-            bl.setClassNumber(rs.getString("classnumber"));
             list.add(bl);
         }
     }

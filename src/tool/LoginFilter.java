@@ -32,7 +32,10 @@ public class LoginFilter implements Filter {
         boolean isLoginRequest = uri.endsWith("Login.action");
         boolean isLoginPage = uri.endsWith("login.jsp");
 
-        if (isLoggedIn || isLoginPage || isLoginRequest || isStaticResource || uri.endsWith("error.jsp")) {
+        boolean isSignupRequest = uri.endsWith("Signup.action");
+        boolean isSignupPage = uri.endsWith("signup.jsp");
+
+        if (isSignupRequest || isSignupPage || isLoggedIn || isLoginPage || isLoginRequest || isStaticResource || uri.endsWith("error.jsp")) {
             chain.doFilter(req, res);
         } else {
             response.sendRedirect("login.jsp");
