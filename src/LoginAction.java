@@ -9,18 +9,18 @@ public class LoginAction extends Action {
         request.setCharacterEncoding("UTF-8");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        String semester = request.getParameter("semester");
 
         try {
             LoginDAO dao = new LoginDAO();
-            boolean isValid = dao.checkLogin(username, password);
+            boolean isValid = dao.checkLogin(username, password, semester);
 
             if (isValid) {
                 request.getSession().setAttribute("loginUser", username);
-                response.sendRedirect("menu.jsp");
-                return null;
-
+                request.getSession().setAttribute("semester", semester);
+                return "menu.jsp";  // 学期はセッションから取得するので分けなくてOK
             } else {
-                request.setAttribute("error", "ユーザー名またはパスワードが間違っています。");
+                request.setAttribute("error", "ユーザー名・パスワード・学期が一致しません");
                 return "login.jsp";
             }
         } catch (Exception e) {
@@ -30,5 +30,3 @@ public class LoginAction extends Action {
         }
     }
 }
-
-

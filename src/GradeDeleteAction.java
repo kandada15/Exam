@@ -9,13 +9,15 @@ public class GradeDeleteAction extends Action {
         throws Exception {
 
         try {
+        	String semester = (String) request.getSession().getAttribute("semester");  // セッションから学期を取得
+
         	String schoolid = request.getParameter("schoolid");
         	String classnumber = request.getParameter("classnumber");
         	String studentname = request.getParameter("studentname");
             String subjectname = request.getParameter("subjectname");
 
             GradeListDAO dao = new GradeListDAO();
-            int deletedCount = dao.deleteByName(schoolid, classnumber, studentname, subjectname);
+            int deletedCount = dao.deleteByName(schoolid, classnumber, studentname, subjectname,semester);
 
             request.setAttribute("deletedCount", deletedCount);
             request.setAttribute("deletedName", schoolid);

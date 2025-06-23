@@ -6,19 +6,15 @@
         return;
     }
 %>
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>総管理画面</title>
+    <title>総管理画面-２学期</title>
 </head>
 <body>
-    <h2>総管理画面</h2>
-
-    <p>ログインユーザー: <%= session.getAttribute("loginUser") %></p>
-    <p>学期: <%= session.getAttribute("semester") %></p>
-
+    <h3> <%= loginUser %> </h3>
+    <h2>総管理画面-２学期</h2>
     <ul>
         <li><a href="studentM.jsp">学生管理</a></li>
         <li><a href="subjectM.jsp">科目管理</a></li>

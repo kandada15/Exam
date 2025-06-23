@@ -8,8 +8,14 @@
 <body>
     <h2>ログイン</h2>
     <form action="Login.action" method="post">
+        学期：<select name="semester">
+         <option value="1">一学期</option>
+         <option value="2">二学期</option>
+        </select><br><br>
+
         ユーザー名：<input type="text" name="username" required><br><br>
         パスワード：<input type="password" name="password" required><br><br>
+
         <input type="submit" value="ログイン">
     </form><br>
     <input type="button" value="未登録の方はこちら" onclick="location.href='signup.jsp'">

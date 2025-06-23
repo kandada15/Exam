@@ -9,12 +9,20 @@ public class StudentdeleteAction extends Action {
         throws Exception {
 
         try {
-            String studentname = request.getParameter("name");
+        	String semester = (String) request.getSession().getAttribute("semester");  // セッションから学期を取得
+
+            String schoolid = request.getParameter("schoolid");
+            String classnumber = request.getParameter("classnumber");
+            String studentnumber = request.getParameter("studentnumber");
+            String studentname = request.getParameter("studentname");
 
             StudentListDAO dao = new StudentListDAO();
-            int deletedCount = dao.deleteByName(studentname);
+            int deletedCount = dao.deleteByName(schoolid, classnumber, studentnumber, studentname, semester);
 
             request.setAttribute("deletedCount", deletedCount);
+            request.setAttribute("deletedName", schoolid);
+            request.setAttribute("deletedName", classnumber);
+            request.setAttribute("deletedName", studentnumber);
             request.setAttribute("deletedName", studentname);
 
             return "studentdelete.jsp";

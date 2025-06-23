@@ -9,8 +9,10 @@ public class SubjectListBean implements Serializable {
 //	 private String subjectid;
 	 private String subjectcode;
 	 private String subjectname;
+	 private String semester;
 //	 private String schoolname;
 //	 private String classnumber;
+
 
 
 	public String getSubjectCode() {
@@ -57,5 +59,11 @@ public class SubjectListBean implements Serializable {
 	}
 	public void setSchoolId(String schoolid) {
 		this.schoolid = schoolid;
+	}
+	public String getSemester() {
+		return semester;
+	}
+	public void setSemester(String semester) {
+		this.semester = semester;
 	}
 }

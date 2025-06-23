@@ -8,6 +8,7 @@
 </head>
 <body>
     <h2>登録情報の確認</h2>
+    <h2>登録完了しました！</h2>
 
     <%
       GradeListBean bl = (GradeListBean) request.getAttribute("bl");
@@ -20,6 +21,7 @@
         <p> 成績：<%= bl.getGrade() %></p>
 
     <br><input type="button" value="もう一度登録" onclick="location.href='gradeinput.html'"><br>
+    <br><input type="button" value="戻る" onclick="location.href='gradeM.jsp'"><br>
         <input type="button" value="総管理画面へ" onclick="location.href='menu.jsp'">
 </body>
 </html>

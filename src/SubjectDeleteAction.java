@@ -9,12 +9,18 @@ public class SubjectDeleteAction extends Action {
         throws Exception {
 
         try {
+        	String semester = (String) request.getSession().getAttribute("semester");  // セッションから学期を取得
+
+            String schoolid = request.getParameter("schoolid");
+            String classid = request.getParameter("classid");
             String subjectname = request.getParameter("subjectname");
 
             SubjectListDAO dao = new SubjectListDAO();
-            int deletedCount = dao.deleteByName(subjectname);
+            int deletedCount = dao.deleteByName(schoolid, classid, subjectname, semester);
 
             request.setAttribute("deletedCount", deletedCount);
+            request.setAttribute("deletedName", schoolid);
+            request.setAttribute("deletedName", classid);
             request.setAttribute("deletedName", subjectname);
 
             return "subjectdelete.jsp";

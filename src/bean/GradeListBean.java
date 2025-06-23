@@ -8,12 +8,13 @@ public class GradeListBean implements Serializable {
 	 private String classnumber;
 //	 private String subjectid;
 //	 private String subjectcode;
+	 private String studentname;
 	 private String subjectname;
 //	 private String schoolname;
 //	 private String classnumber;
-	 private String studentname;
 	 private String score;
 	 private String grade;
+	 private String semester;
 
 
 	 public String getSchoolId() {
@@ -37,17 +38,18 @@ public class GradeListBean implements Serializable {
 //		this. subjectcode = subjectcode;
 //	}
 
+	 public String getStudentName() {
+		 return studentname;
+	 }
+	 public void setStudentName(String studentname) {
+		 this.studentname = studentname;
+	 }
+
 	public String getSubjectName() {
 		return subjectname;
 	}
 	public void setSubjectName(String subjectname) {
 		this. subjectname = subjectname;
-	}
-	public String getStudentName() {
-		return studentname;
-	}
-	public void setStudentName(String studentname) {
-		this.studentname = studentname;
 	}
 
 	public String getScore() {
@@ -62,6 +64,12 @@ public class GradeListBean implements Serializable {
 	}
 	public void setGrade(String grade) {
 		this.grade = grade;
+	}
+	public String getSemester() {
+		return semester;
+	}
+	public void setSemester(String semester) {
+		this.semester = semester;
 	}
 
 //	public String getSchoolName() {

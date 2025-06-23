@@ -11,11 +11,23 @@
     <p>科目名を入力してください。</p>
 
     <form action="SubjectDelete.action" method="post">
+        学校名ID：
+        <select name="schoolid">
+         <option value="1">広島校</option>
+         <option value="2">東京校</option>
+         <option value="3">難波校</option>
+        </select><br>
+        クラス：
+        <select name="classid">
+         <option value="1">1-31</option>
+         <option value="2">2-31</option>
+        </select><br>
         科目名：
         <select name="subjectname" required>
          <option value="井口">井口</option>
          <option value="ひろあき">ひろあき</option>
         </select><br><br>
+
         <input type="submit" value="削除">
     </form>
 
@@ -32,6 +44,6 @@
     %>
 
     <br>
-    <input type="button" value="総管理画面へ" onclick="location.href='menu.jsp'">
+    <input type="button" value="戻る" onclick="location.href='subjectM.jsp'">
 </body>
 </html>

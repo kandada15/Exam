@@ -5,11 +5,11 @@ import java.io.Serializable;
 public class StudentListBean implements Serializable {
 
 	 private String schoolid;
-	 private String classid;
 	 private String schoolname;
 	 private String studentnumber;
 	 private String classnumber;
 	 private String studentname;
+	 private String semester;
 
 
 	public String getSchoolName() {
@@ -40,16 +40,19 @@ public class StudentListBean implements Serializable {
 	public void setStudentName(String studentname) {
 		this.studentname = studentname;
 	}
+
 	public String getSchoolId() {
 		return schoolid;
 	}
 	public void setSchoolId(String schoolid) {
 		this.schoolid = schoolid;
 	}
-	public String getClassId() {
-		return classid;
+
+
+	public String getSemester() {
+		return semester;
 	}
-	public void setClassId(String classid) {
-		this.classid = classid;
+	public void setSemester(String semester) {
+		this.semester = semester;
 	}
 }

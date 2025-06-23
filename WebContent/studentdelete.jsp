@@ -11,7 +11,22 @@
     <p>学生名を入力してください。</p>
 
     <form action="Studentdelete.action" method="post">
-        学生名：<input type="text" name="studentname" required><br><br>
+        学校名ID：
+        <select name="schoolid">
+         <option value="1">広島校</option>
+         <option value="2">東京校</option>
+         <option value="3">難波校</option>
+        </select><br>
+        クラス：
+        <select name="classnumber">
+         <option value="1-31">1-31</option>
+         <option value="2-31">2-31</option>
+        </select><br>
+        学生番号：<br>
+		<input type="text" name="studentnumber" required><br><br>
+        学生名：<br>
+        <input type="text" name="studentname" required><br><br>
+
         <input type="submit" value="削除">
     </form>
 
@@ -28,6 +43,6 @@
     %>
 
     <br>
-    <input type="button" value="総管理画面へ" onclick="location.href='menu.jsp'">
+    <input type="button" value="戻る" onclick="location.href='studentM.jsp'">
 </body>
 </html>

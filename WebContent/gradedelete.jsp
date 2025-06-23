@@ -45,6 +45,6 @@
     %>
 
     <br>
-    <input type="button" value="総管理画面へ" onclick="location.href='menu.jsp'">
+    <input type="button" value="戻る" onclick="location.href='gradeM.jsp'">
 </body>
 </html>

@@ -1,4 +1,9 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" import="java.util.List, bean.SubjectListBean" %>
+
+<%
+    String semester = (String) session.getAttribute("semester");
+%>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -6,7 +11,7 @@
   <title>科目一覧の表示</title>
 </head>
 <body>
-   <h2>科目一覧の表示</h2>
+   <h2>科目一覧の表示 - <%= semester %>学期</h2>
    <p>学校名とクラス名を記入⇒科目一覧表示</p>
 
    <form action="SubjectSearch.action" method="post">

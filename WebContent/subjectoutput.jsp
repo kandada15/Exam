@@ -8,6 +8,7 @@
 </head>
 <body>
     <h2>登録情報の確認</h2>
+    <h2>登録完了しました！</h2>
 
     <%
       SubjectListBean bl = (SubjectListBean) request.getAttribute("bl");
@@ -18,6 +19,6 @@
         <p> 科目名：<%= bl.getSubjectName() %></p>
 
     <br>
-        <input type="button" value="総管理画面へ" onclick="location.href='menu.jsp'">
+        <input type="button" value="戻る" onclick="location.href='subjectM.jsp'">
 </body>
 </html>

@@ -1,4 +1,9 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" import="java.util.List, bean.GradeListBean" %>
+
+<%
+    String semester = (String) session.getAttribute("semester");
+%>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -6,7 +11,7 @@
     <title>表示用</title>
 </head>
 <body>
-    <h2>成績情報検索</h2>
+    <h2>成績情報検索 - <%= semester %>学期</h2>
     <p>学校名とクラス名を選択すると、学生番号と学生名を表示出来るはず</p>
 
     <form action="GradeSearch.action" method="post">
@@ -59,10 +64,23 @@
         <!-- 平均点出力ボタン -->
         <form action="ClassAverage.action" method="POST">
         クラスを選択して平均点を出力：<br>
-        <select name="classnumber">
-            <option value="1-31">1-31</option>
-            <option value="2-31">2-31</option>
-        </select>
+        学校名：<br>
+		<select name="schoolid">
+         <option value="1">広島校</option>
+         <option value="2">東京校</option>
+         <option value="3">難波校</option>
+        </select><br><br>
+		クラス：<br>
+		<select name="classnumber">
+         <option value="1-31">1-31</option>
+         <option value="2-31">2-31</option>
+        </select><br><br>
+        科目名：<br>
+		<select name="subjectname" required>
+         <option value="井口">井口</option>
+         <option value="ひろあき">ひろあき</option>
+        </select><br><br>
+
         <input type="submit" value="平均点出力">
         </form>
 
@@ -82,6 +100,6 @@
 
 
     <br>
-    <input type="button" value="総管理画面へ" onclick="location.href='gradeM.jsp'">
+    <input type="button" value="戻る" onclick="location.href='gradeM.jsp'">
 </body>
 </html>

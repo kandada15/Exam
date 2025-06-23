@@ -1,4 +1,4 @@
-import java.util.List;
+ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,10 +11,13 @@ public class StudentsearchAction extends Action {
     public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
         try {
+        	String semester = (String) request.getSession().getAttribute("semester");  // セッションから学期を取得
+
         	String SchoolId = request.getParameter("schoolid");
         	String ClassNumber = request.getParameter("classnumber");
-            StudentListDAO dao = new StudentListDAO();
-            List<StudentListBean> list = dao.search(SchoolId, ClassNumber);  // 後述の search() を使用
+
+        	StudentListDAO dao = new StudentListDAO();
+            List<StudentListBean> list = dao.search(SchoolId, ClassNumber, semester);  // 後述の search() を使用
 
             request.setAttribute("list", list);
             request.setAttribute("schoolid", SchoolId);
