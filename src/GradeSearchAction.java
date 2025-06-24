@@ -17,14 +17,19 @@ public class GradeSearchAction extends Action {
 
 			String SchoolId = request.getParameter("schoolid");
 			String ClassNumber = request.getParameter("classnumber");
-			String StudentName = request.getParameter("studentname");
+			String SubjectCode = request.getParameter("subjectcode");
+			String SubjectName = request.getParameter("subjectname");
+//			String StudentName = request.getParameter("studentname");
 			GradeListDAO dao = new GradeListDAO();
-			List<GradeListBean> list = dao.search(SchoolId, ClassNumber, StudentName, Semester);
+			List<GradeListBean> list = dao.search(SchoolId, ClassNumber, SubjectCode, SubjectName, Semester);
 
 			request.setAttribute("list", list);
 			request.setAttribute("schoolid", SchoolId);
 			request.setAttribute("classnumber", ClassNumber);
-			request.setAttribute("studentname", StudentName);
+			request.setAttribute("subjectcode", SubjectCode);
+			request.setAttribute("subjectname", SubjectName);
+//			request.setAttribute("studentname", StudentName);
+
 
 			// 平均点を計算してセット
 	        if (list != null && !list.isEmpty()) {

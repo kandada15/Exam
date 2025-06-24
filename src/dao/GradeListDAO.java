@@ -56,18 +56,20 @@ public int deleteByName(String schoolid, String classnumber, String studentname,
 }
 //
 // 検索機能(select)
-public List<GradeListBean> search(String SchoolId, String ClassNumber, String StudentName, String Semester) throws Exception {
+public List<GradeListBean> search(String SchoolId, String ClassNumber, String SubjectCode, String SubjectName, String Semester) throws Exception {
     List<GradeListBean> list = new ArrayList<>();
 
     try (Connection con = getConnection();
          PreparedStatement st = con.prepareStatement(
-             "SELECT * FROM gradelist WHERE schoolid = ? AND classnumber = ? AND studentname = ? AND semester = ?")) {
+             "SELECT * FROM gradelist WHERE schoolid = ? AND classnumber = ? AND subjectcode = ? AND subjectname = ? AND semester = ?")) {
 
 //        String likeKeyword = "%" + keyword + "%";
         st.setString(1, SchoolId);
         st.setString(2, ClassNumber);
-        st.setString(3, StudentName);
-        st.setString(4, Semester);
+        st.setString(3, SubjectCode);
+        st.setString(4, SubjectName);
+//        st.setString(3, StudentName);
+        st.setString(5, Semester);
 
         ResultSet rs = st.executeQuery();
         while (rs.next()) {
