@@ -26,6 +26,19 @@ public class GradeSearchAction extends Action {
 			request.setAttribute("classnumber", ClassNumber);
 			request.setAttribute("studentname", StudentName);
 
+			// 平均点を計算してセット
+	        if (list != null && !list.isEmpty()) {
+	            int total = 0;
+	            for (GradeListBean grade : list) {
+	                total += Integer.parseInt(grade.getScore());
+	            }
+
+	            double average = (double) total / list.size();
+	            request.setAttribute("average", String.format("%.1f", average));
+	        } else {
+	            request.setAttribute("average", "情報無し");
+	        }
+
 			return "gradesearch.jsp";
 
 		} catch (Exception e) {

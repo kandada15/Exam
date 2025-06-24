@@ -22,6 +22,6 @@
 
     <br><input type="button" value="もう一度登録" onclick="location.href='gradeinput.html'"><br>
     <br><input type="button" value="戻る" onclick="location.href='gradeM.jsp'"><br>
-        <input type="button" value="総管理画面へ" onclick="location.href='menu.jsp'">
+
 </body>
 </html>
