@@ -13,6 +13,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>科目管理画面</title>
+<link href="studentM.css" rel="stylesheet">
 </head>
 <body>
   <h3><%= loginUser %></h3>
