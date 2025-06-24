@@ -1,0 +1,54 @@
+/* 全体の背景とフォント */
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Segoe UI', 'ヒラギノ角ゴ ProN W3', 'メイリオ', sans-serif;
+    background-color: #ecf0f1;
+    color: #2c3e50;
+}
+
+/* ログインユーザー表示 */
+h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #34495e;
+}
+
+/* メインタイトル */
+h2 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+}
+
+/* メニューリスト */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* リスト項目（ボタン風） */
+li {
+    margin: 15px 0;
+}
+
+li a {
+    display: block;
+    padding: 15px 25px;
+    background-color: #34495e;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+li a:hover {
+    background-color: #2c3e50;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+}

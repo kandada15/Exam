@@ -21,11 +21,9 @@
          <option value="2">東京校</option>
          <option value="3">難波校</option>
         </select><br>
-        クラス：
-        <select name="classnumber">
-         <option value="1-31">1-31</option>
-         <option value="2-31">2-31</option>
-        </select><br>
+        クラス：<br>
+		<label><input type="radio" name="classnumber" value="1-31">1-31</label>
+		<label><input type="radio" name="classnumber" value="2-31">2-31</label><br><br>
 
         <input type="submit" value="表示">
     </form>

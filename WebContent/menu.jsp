@@ -11,19 +11,60 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>総管理画面</title>
+    <title>統一ダッシュボード</title>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; }
+        .container { display: flex; height: 100vh; }
+        .sidebar {
+            width: 30%;
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .sidebar h2 { margin-top: 0; }
+        .sidebar button {
+            display: block; width: 100%; padding: 15px;
+            margin-bottom: 15px; background-color: #34495e;
+            border: none; color: white; font-size: 16px;
+            cursor: pointer; border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .sidebar button:hover { background-color: #1abc9c; }
+        .main-content {
+            width: 70%; padding: 0; box-sizing: border-box;
+            background-color: #ecf0f1;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
 </head>
 <body>
-    <h2>総管理画面</h2>
+<div class="container">
+    <div class="sidebar">
+        <h2>統一ダッシュボード</h2>
+        <p>ユーザー: <%= loginUser %></p>
+        <p>学期: <%= session.getAttribute("semester") %></p>
 
-    <p>ログインユーザー: <%= session.getAttribute("loginUser") %></p>
-    <p>学期: <%= session.getAttribute("semester") %></p>
+        <button onclick="loadPage('studentM.jsp')">学生管理</button>
+        <button onclick="loadPage('subjectM.jsp')">科目管理</button>
+        <button onclick="loadPage('gradeM.jsp')">成績管理</button>
+        <button onclick="location.href='login.jsp'">ログアウト</button>
+    </div>
 
-    <ul>
-        <li><a href="studentM.jsp">学生管理</a></li>
-        <li><a href="subjectM.jsp">科目管理</a></li>
-        <li><a href="gradeM.jsp">成績管理</a></li>
-        <li><a href="login.jsp">ログアウト</a></li>
-    </ul>
+    <div class="main-content">
+        <iframe id="contentFrame" src=""></iframe>
+    </div>
+</div>
+
+<script>
+    function loadPage(page) {
+        document.getElementById('contentFrame').src = page;
+    }
+</script>
 </body>
 </html>
+

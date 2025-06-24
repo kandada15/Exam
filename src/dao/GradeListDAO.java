@@ -16,14 +16,15 @@ public void insert(GradeListBean bl) throws Exception {
 
         try (Connection con = getConnection();
             PreparedStatement st = con.prepareStatement(
-                "INSERT INTO gradelist (schoolid, classnumber, studentname, subjectname, score, grade, semester) VALUES (? ,? ,?, ?, ?, ?, ?)")) {
+                "INSERT INTO gradelist (schoolid, classnumber, studentname, subjectcode, subjectname, score, grade, semester) VALUES (?, ? ,? ,?, ?, ?, ?, ?)")) {
         	    st.setString(1, bl.getSchoolId());
         	    st.setString(2, bl.getClassNumber());
         	    st.setString(3, bl.getStudentName());
-        	    st.setString(4, bl.getSubjectName());
-        	    st.setString(5, bl.getScore());
-        	    st.setString(6, bl.getGrade());
-        	    st.setString(7, bl.getSemester());
+        	    st.setString(4, bl.getSubjectCode());
+        	    st.setString(5, bl.getSubjectName());
+        	    st.setString(6, bl.getScore());
+        	    st.setString(7, bl.getGrade());
+        	    st.setString(8, bl.getSemester());
 
 
                 st.executeUpdate();
@@ -76,6 +77,7 @@ public List<GradeListBean> search(String SchoolId, String ClassNumber, String St
 //        	bl.setSubjectId(rs.getString("subjectid"));
 //        	bl.setSubjectCode(rs.getString("subjectcode"));
         	bl.setStudentName(rs.getString("studentname"));
+        	bl.setSubjectCode(rs.getString("subjectcode"));
         	bl.setSubjectName(rs.getString("subjectname"));
         	bl.setScore(rs.getString("score"));
         	bl.setGrade(rs.getString("grade"));

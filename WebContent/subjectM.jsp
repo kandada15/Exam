@@ -21,7 +21,7 @@
    <li><a href="subjectsearch.jsp">科目一覧表示</a></li>
    <li><a href="subjectinput.html">科目登録</a></li>
    <li><a href="subjectdelete.jsp">科目削除</a></li>
-   <li><a href="menu.jsp">総管理画面へ</a></li>
+
   </ul>
 </body>
 </html>

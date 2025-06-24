@@ -14,6 +14,7 @@ public class GradeBeanSystemAction extends Action {
     	String schoolid = request.getParameter("schoolid");
     	String classnumber = request.getParameter("classnumber");
     	String studentname = request.getParameter("studentname");
+    	String subjectcode = request.getParameter("subjectcode");
     	String subjectname = request.getParameter("subjectname");
     	String score = request.getParameter("score");
 //    	String grade = request.getParameter("grade");
@@ -38,6 +39,7 @@ public class GradeBeanSystemAction extends Action {
         bl.setSchoolId(schoolid);
         bl.setClassNumber(classnumber);
     	bl.setStudentName(studentname);
+    	bl.setSubjectCode(subjectcode);
     	bl.setSubjectName(subjectname);
     	bl.setScore(score);
     	bl.setGrade(grade);

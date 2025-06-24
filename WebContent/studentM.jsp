@@ -13,6 +13,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>学生管理画面</title>
+<link href="studentM.css" rel="stylesheet">
 </head>
 <body>
   <h3><%= loginUser %></h3>
@@ -21,7 +22,7 @@
         <li><a href="studentsearch.jsp">学生一覧表示</a></li>
         <li><a href="studentinput.html">学生登録</a></li>
         <li><a href="studentdelete.jsp">学生削除</a></li>
-        <li><a href="menu.jsp">総管理画面へ</a></li>
+     
     </ul>
 </body>
 </html>
