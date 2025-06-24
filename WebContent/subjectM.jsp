@@ -16,7 +16,6 @@
 <link href="studentM.css" rel="stylesheet">
 </head>
 <body>
-  <h3><%= loginUser %></h3>
   <h2>科目管理画面</h2>
   <ul>
    <li><a href="subjectsearch.jsp">科目一覧表示</a></li>

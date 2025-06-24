@@ -15,8 +15,6 @@
 <title>成績管理画面</title>
 <link href="studentM.css" rel="stylesheet">
 </head>
-<body>
-  <h3><%= loginUser %></h3>
   <h2>成績管理画面</h2>
   <ul>
    <li><a href="gradesearch.jsp">成績一覧表示</a></li>
