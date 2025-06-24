@@ -9,15 +9,17 @@
 <body>
     <h2>サインアップ</h2>
     <form action="Signup.action" method="post">
+
+        ユーザー名：<input type="text" name="username" required><br><br>
+
+        パスワード：<input type="password" name="password" required><br><br>
+
         学期を選択：<br>
         <select name="semester">
             <option value="1">一学期</option>
             <option value="2">二学期</option>
         </select><br><br>
 
-        ユーザー名：<input type="text" name="username" required><br><br>
-
-        パスワード：<input type="password" name="password" required><br><br>
         <input type="submit" value="サインアップ">
     </form>
 

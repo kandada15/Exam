@@ -41,7 +41,7 @@ public class GradeSearchAction extends Action {
 	            double average = (double) total / list.size();
 	            request.setAttribute("average", String.format("%.1f", average));
 	        } else {
-	            request.setAttribute("average", "情報無し");
+	            request.setAttribute("average", "0");
 	        }
 
 			return "gradesearch.jsp";
