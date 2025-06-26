@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>サインアップ</title>
-    <link href="signup.css" rel="stylesheet">
+    <link href="css/signup.css" rel="stylesheet">
 </head>
 <body>
     <h2>サインアップ</h2>

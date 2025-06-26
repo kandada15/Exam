@@ -20,6 +20,7 @@
         <p> 学生名：<%= bl.getStudentName() %></p>
 
     <br>
+        <br><input type="button" value="もう一度登録" onclick="location.href='studentinput.jsp'"><br><br>
         <input type="button" value="戻る" onclick="location.href='studentM.jsp'">
 </body>
 </html>

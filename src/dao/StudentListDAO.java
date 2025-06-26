@@ -30,6 +30,8 @@ public void insert(StudentListBean bl) throws Exception {
 	}
 
 
+
+
 // 削除機能(delete)
 public int deleteByName(String schoolid, String classnumber, String studentnumber, String studentname, String semester) throws Exception {
     int count = 0;

@@ -13,12 +13,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>成績管理画面</title>
-<link href="studentM.css" rel="stylesheet">
+<link href="css/studentM.css" rel="stylesheet">
 </head>
   <h2>成績管理画面</h2>
   <ul>
    <li><a href="gradesearch.jsp">成績一覧表示</a></li>
-   <li><a href="gradeinput.html">成績登録</a></li>
+   <li><a href="gradeinput.jsp">成績登録</a></li>
    <li><a href="gradedelete.jsp">成績削除</a></li>
 
   </ul>

@@ -1,14 +1,16 @@
+<%@ page contentType="text/html; charset=UTF-8" %>
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-<meta charset="UTF-8">
-<title>成績登録</title>
+  <meta charset="UTF-8">
+  <title>成績登録</title>
+  <link rel="stylesheet" href="<%= request.getContextPath() %>/css/dashboard-input.css">
 </head>
-
 <body>
-	<h2>成績情報の登録</h2>
+<div class="container">
+  <h2>成績情報の登録</h2>
 
-	<script>
+  <script>
       function updateSubjectName() {
        var select = document.getElementById("subjectSelect");
        var selectedOption = select.options[select.selectedIndex];
@@ -18,20 +20,27 @@
        document.getElementById("subjectname").value = codeName[1];
      }
     </script>
-	<form action="GradeBeanSystem.action" method="POST">
-		学校名：<br>
-		<select name="schoolid">
-         <option value="1">広島校</option>
-         <option value="2">東京校</option>
-         <option value="3">難波校</option>
-        </select><br><br>
-		<div class="radio-group">
+  <p>成績情報を入力して登録してください。</p>
+
+  <div class="form-card">
+    <form action="GradeBeanSystem.action" method="POST">
+      <label>学校名：</label>
+      <select name="schoolid" required>
+        <option value="1">広島校</option>
+        <option value="2">東京校</option>
+        <option value="3">難波校</option>
+      </select>
+
+      <label>クラス：</label>
+      <div class="radio-group">
              <label><input type="radio" name="classnumber" value="1-31">1-31</label>
              <label><input type="radio" name="classnumber" value="2-31">2-31</label><br>
-         </div>
-		学生名：<br>
-		<input type="text" name="studentname" required><br><br>
-		科目選択：<br>
+      </div>
+
+      <label>学生名：</label>
+      <input type="text" name="studentname" required>
+
+      <label>科目選択：</label>
         <select id="subjectSelect" onchange="updateSubjectName()" required>
          <option value="">-- 選択してください --</option>
          <option value="IT101:プログラミング基礎">IT101 - プログラミング基礎</option>
@@ -45,17 +54,20 @@
          <option value="IT109:モバイルアプリ開発">IT109 - モバイルアプリ開発</option>
          <option value="IT110:機械学習入門">IT110 - 機械学習入門</option>
         </select><br><br>
-		点数：<br>
-		<input type="number"  name="score" min="0" max="100" value="1" required><br><br>
+		<label>点数：</label><br>
+		<input type="number"  name="score" min="0" max="100" value="1" required><br>
 
 		<!-- 隠しフィールドでコードと名前を送る -->
         <input type="hidden" name="subjectcode" id="subjectcode">
         <input type="hidden" name="subjectname" id="subjectname">
 
-		<input type="submit" value="送信"><br><br>
+		<input type="submit" value="送信">
 
-    <input type="button" value="成績管理画面に戻る" onclick="location.href='gradeM.jsp'">
-	</form>
+
+    </form>
+  </div>
+
+  <input type="button" value="成績管理画面へ戻る" onclick="location.href='gradeM.jsp'">
+</div>
 </body>
-
 </html>

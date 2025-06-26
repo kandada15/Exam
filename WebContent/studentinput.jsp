@@ -1,11 +1,10 @@
+<%@ page contentType="text/html; charset=UTF-8" %>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <title>学生登録</title>
-  <link rel="stylesheet" href="css/dashboard-input.css">
-
-
+  <link rel="stylesheet" href="<%= request.getContextPath() %>/css/dashboard-input.css">
 </head>
 <body>
 <div class="container">
@@ -21,16 +20,19 @@
         <option value="3">難波校</option>
       </select>
 
-      <label>クラス：</label><br>
-      <label><input type="radio" name="classnumber" value="1-31" required> 1-31</label><br>
-      <label><input type="radio" name="classnumber" value="2-31"> 2-31</label><br><br>
+      <label>クラス：</label>
+      <div class="radio-group">
+             <label><input type="radio" name="classnumber" value="1-31">1-31</label>
+             <label><input type="radio" name="classnumber" value="2-31">2-31</label><br>
+      </div>
+
 
       <label>学生番号：</label>
       <input type="text" name="studentnumber" required>
 
       <label>学生名：</label>
-      <input type="text" name="studentname" required><br>
-<br>
+      <input type="text" name="studentname" required>
+
       <input type="submit" value="送信">
     </form>
   </div>

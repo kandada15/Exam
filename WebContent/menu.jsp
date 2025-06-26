@@ -11,12 +11,12 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>統一ダッシュボード</title>
+    <title>成績管理システム</title>
     <style>
         body { margin: 0; font-family: Arial, sans-serif; }
         .container { display: flex; height: 100vh; }
         .sidebar {
-            width: 30%;
+            width: 300px;
             background-color: #2c3e50;
             color: white;
             padding: 20px;
@@ -32,7 +32,8 @@
         }
         .sidebar button:hover { background-color: #1abc9c; }
         .main-content {
-            width: 70%; padding: 0; box-sizing: border-box;
+            flex: 1;
+            padding: 0; box-sizing: border-box;
             background-color: #ecf0f1;
         }
         iframe {
@@ -45,7 +46,7 @@
 <body>
 <div class="container">
     <div class="sidebar">
-        <h2>統一ダッシュボード</h2>
+        <h2>成績管理システム</h2>
         <p>ユーザー: <%= loginUser %></p>
         <p>学期: <%= session.getAttribute("semester") %></p>
 
@@ -56,7 +57,7 @@
     </div>
 
     <div class="main-content">
-        <iframe id="contentFrame" src=""></iframe>
+        <iframe id="contentFrame" src="studentM.jsp"></iframe>
     </div>
 </div>
 
@@ -67,4 +68,3 @@
 </script>
 </body>
 </html>
-

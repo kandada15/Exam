@@ -25,7 +25,7 @@ public class GradeDeleteAction extends Action {
             request.setAttribute("deletedName", studentname);
             request.setAttribute("deletedName", subjectname);
 
-            return "subjectdelete.jsp";
+            return "gradedelete.jsp";
 
         } catch (Exception e) {
             e.printStackTrace();

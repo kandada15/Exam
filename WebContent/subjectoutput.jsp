@@ -19,6 +19,7 @@
         <p> 科目名：<%= bl.getSubjectName() %></p>
 
     <br>
+        <br><input type="button" value="もう一度登録" onclick="location.href='subjectinput.jsp'"><br>
         <input type="button" value="戻る" onclick="location.href='subjectM.jsp'">
 </body>
 </html>
